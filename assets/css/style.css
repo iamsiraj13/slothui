@@ -62,6 +62,9 @@ body {
   color: var(--body-color);
   overflow-x: hidden;
 }
+html {
+  overflow-x: hidden;
+}
 
 a,
 span,
@@ -117,6 +120,14 @@ p {
   width: 100%;
   margin: 0 auto;
 }
+
+@media (max-width: 420px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 *::-moz-selection {
   background: var(--primary-color);
   color: var(--white-color);
@@ -192,6 +203,21 @@ p {
   padding: 6px 12px;
   border-radius: 30px;
 }
+@media (max-width: 420.98px) {
+  .heading-one {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .heading-two {
+    font-size: 30px;
+  }
+  .heading-three {
+    font-size: 20px;
+  }
+  .heading-four {
+    font-size: 18px;
+  }
+}
 
 /*=============================
 	05. Header CSS Start
@@ -249,6 +275,15 @@ p {
   border-radius: 30px;
 }
 
+@media (max-width: 420.98px) {
+  .nav-menu {
+    display: none;
+  }
+  .header-btn {
+    display: none;
+  }
+}
+
 /* .sticky-menu {
   background-color: var(--bs-white-color);
   animation: 400ms ease-in-out 0s normal none 1 running fadeInDown;
@@ -299,6 +334,15 @@ p {
 .banner-img img {
   width: 100%;
 }
+@media (max-width: 420.98px) {
+  .banner-content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .banner-area {
+    padding-bottom: 64px;
+  }
+}
 /*=============================
 	07. Brand CSS Start
 ===============================*/
@@ -320,6 +364,16 @@ p {
 .brand-item img {
   width: 100%;
   height: 100%;
+}
+@media (max-width: 420px) {
+  .brand-wrapper {
+    gap: 32px;
+    row-gap: 32px;
+  }
+  .brand-item {
+    width: 96px;
+    height: 64px;
+  }
 }
 
 /*=============================
@@ -366,6 +420,16 @@ p {
   font-weight: 400;
   line-height: 160%;
 }
+@media (max-width: 420.98px) {
+  .features-area {
+    padding: 64px 0;
+  }
+  .feature-content {
+    grid-template-columns: 1fr;
+
+    row-gap: 32px;
+  }
+}
 
 /*=============================
 	09. Counter CSS Start
@@ -409,6 +473,7 @@ p {
   width: 100%;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   /* gap: 32px; */
 }
@@ -442,6 +507,38 @@ p {
   line-height: 24px;
   letter-spacing: -0.144px;
 }
+@media (max-width: 420.98px) {
+  .counter-area {
+    padding: 64px 0;
+  }
+  .counter-content {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-direction: column;
+  }
+  .counter-area .section-title .heading-two {
+    padding-right: 40px;
+  }
+  . .counter-item {
+    text-align: center;
+    border-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 32px;
+    padding-top: 32px;
+  }
+  .counter-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .counter-item:first-child {
+    padding-top: 0;
+  }
+}
+
 /*=============================
 	10. Who CSS Start
 ===============================*/
@@ -465,6 +562,7 @@ p {
 }
 .who-content {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
@@ -474,7 +572,7 @@ p {
 }
 .who-item {
   padding: 24px 96px 24px 24px;
-  border-left: 1px solid #e0e7ff;
+  border-left: 2px solid #e0e7ff;
   margin-bottom: 8px;
   transition: var(--transition);
 }
@@ -500,6 +598,28 @@ p {
   height: auto;
 }
 
+@media (max-width: 420px) {
+  .who-area .section-title {
+    margin-bottom: 32px;
+    width: 100%;
+  }
+  .who-area .section-title p {
+    color: var(--body-color);
+    font-size: 18px;
+  }
+  .who-content {
+    flex-direction: column;
+  }
+  .who-content .who-item-group {
+    width: 100%;
+  }
+  .who-content .who-img {
+    width: 100%;
+  }
+  .who-item {
+    padding-right: 0;
+  }
+}
 /*=============================
 	11. Testimonial CSS Start
 ===============================*/
@@ -562,6 +682,42 @@ p {
   line-height: 160%;
   margin: 0;
 }
+.testimonial-btn a {
+  display: none;
+}
+@media (max-width: 420px) {
+  .testimonial-area {
+    padding: 64px 0;
+  }
+  .testimonial-area .section-title {
+    margin-bottom: 32px;
+  }
+  .testimonial-area .section-title h2 {
+    margin: 20px 0;
+  }
+  .testimonial-wrapper {
+    column-count: 1;
+  }
+  .testimonial-item {
+    margin-bottom: 16px;
+  }
+
+  .testimonial-btn a {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    color: var(--white-color);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+    letter-spacing: -0.084px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+  }
+}
 /*=============================
 	12. Office CSS Start
 ===============================*/
@@ -592,13 +748,176 @@ p {
   margin-bottom: 8px;
   margin-top: 24px;
 }
+@media (max-width: 420px) {
+  .office-item {
+    width: 100%;
+    padding: 20px;
+  }
+}
 /*=============================
 	13. FAQ CSS Start
 ===============================*/
+.faq-area {
+  padding-top: 96px;
+  padding-bottom: 87px;
+  background-color: var(--background-color);
+}
+.faq-area .section-title {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.faq-area .section-title h2 {
+  margin: 24px 0;
+}
 
+.faq-content {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordion-header {
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.accordion-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #cbd5e1;
+}
+.accordion-header span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+.accordion-header.active .arrow {
+  transform: rotate(180deg); /* points up */
+}
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+.accordion-content p {
+  width: 728px;
+  padding: 16px 0;
+  color: var(--body-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+}
+@media (max-width: 420px) {
+  .faq-area {
+    padding-top: 64px 0;
+  }
+}
 /*=============================
 	14. App CSS Start
 ===============================*/
+.app-area {
+  background-color: var(--background-color);
+  width: 100%;
+  height: 636px;
+  overflow: hidden;
+}
+.app-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  gap: 96px;
+}
+.app-content {
+  width: 560px;
+  height: 636px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.app-content p {
+  color: var(--body-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 160%;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+.app-btn {
+  display: flex;
+  gap: 16px;
+}
+.app-img {
+  width: 560px;
+  position: relative;
+}
+.app-img .app-img-1 {
+  position: absolute;
+  left: -120px;
+  top: 43px;
+}
+.app-img .app-img-2 {
+  position: absolute;
+  top: -159px;
+  right: -361px;
+  z-index: 3;
+}
+.app-mobile {
+  display: none;
+}
+@media (max-width: 420px) {
+  .app-area {
+    height: auto;
+  }
+  .app-row {
+    flex-direction: column;
+    gap: 48px;
+  }
+  .app-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  .app-btn {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .app-btn .theme-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .app-btn .theme-btn.btn-outline {
+    display: block;
+    width: 100%;
+    border-color: var(--primary-color);
+  }
+  .app-img {
+    width: 100%;
+    position: relative;
+  }
+  .app-img-1 {
+    display: none;
+  }
+  .app-img-2 {
+    display: none;
+  }
+  .app-mobile {
+    display: block;
+    width: 100%;
+  }
+}
 
 /*=============================
 	15. Footer CSS Start
@@ -610,6 +929,7 @@ p {
 
 .footer-main {
   display: flex;
+  flex-wrap: wrap;
   gap: 32px;
 }
 .footer-main .footer-widget {
@@ -632,9 +952,8 @@ p {
   letter-spacing: -0.112px;
 }
 
-@media (max-width: 1399.98px) {
-  .heading-style1 {
-    font-size: 64px;
-    line-height: 74px;
+@media (max-width: 576px) {
+  .footer-area {
+    padding: 64px 0;
   }
 }
