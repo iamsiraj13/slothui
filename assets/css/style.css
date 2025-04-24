@@ -228,6 +228,7 @@ p {
   background-color: var(--white-color);
   display: flex;
   align-items: center;
+  position: relative;
 }
 .header {
   display: flex;
@@ -250,6 +251,9 @@ p {
   font-weight: 700;
   line-height: 22px;
   letter-spacing: -0.112px;
+}
+.nav-menu ul li a:hover {
+  color: var(--primary-color);
 }
 .header-btn {
   display: flex;
@@ -275,9 +279,72 @@ p {
   border-radius: 30px;
 }
 
+.mobile-menu button {
+  border: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.offcanvas {
+  width: 100%;
+  transform: translateX(-100%);
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 999;
+  transition: var(--transition);
+}
+.offcanvas.active {
+  transform: translateX(0);
+}
+.offcanvas .offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.offcanvas-header .logo {
+  margin-left: 10px;
+}
+.offcanvas-header .close svg {
+  width: 30px;
+  margin-right: 20px;
+}
+.offcanvas-menu {
+  padding-left: 20px;
+}
+.offcanvas-menu ul li {
+  padding-bottom: 15px;
+  margin-top: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+.offcanvas-menu ul li a {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  padding-bottom: 15px;
+  margin-top: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+.offcanvas-menu ul li:hover a {
+  color: var(--primary-color);
+}
+.offcanvas-btn {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.offcanvas-btn a {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
 @media (max-width: 420.98px) {
   .nav-menu {
     display: none;
+  }
+  .header-area {
+    justify-content: space-between;
   }
   .header-btn {
     display: none;
@@ -342,6 +409,9 @@ p {
   .banner-area {
     padding-bottom: 64px;
   }
+  .banner-content .banner-text {
+    margin-bottom: 32px;
+  }
 }
 /*=============================
 	07. Brand CSS Start
@@ -369,6 +439,7 @@ p {
   .brand-wrapper {
     gap: 32px;
     row-gap: 32px;
+    justify-content: start;
   }
   .brand-item {
     width: 93px;
@@ -518,7 +589,7 @@ p {
     flex-direction: column;
   }
   .counter-area .section-title .heading-two {
-    padding-right: 40px;
+    padding-right: 0;
   }
   .counter-item {
     text-align: center;
@@ -602,6 +673,9 @@ p {
   .who-area .section-title {
     margin-bottom: 32px;
     width: 100%;
+  }
+  .who-area .section-title .heading-two {
+    padding-right: 40px;
   }
   .who-area .section-title p {
     color: var(--body-color);
@@ -732,6 +806,12 @@ p {
 .office-area .section-title h2 {
   margin: 24px 0;
 }
+.office-area .section-title p {
+  color: var(--body-color);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 160%;
+}
 
 .office-content {
   display: flex;
@@ -752,6 +832,9 @@ p {
   .office-item {
     width: 100%;
     padding: 20px;
+  }
+  .office-area .section-title p {
+    padding-right: 10px;
   }
 }
 /*=============================
@@ -822,6 +905,9 @@ p {
   .faq-area {
     padding-top: 64px 0;
   }
+  .accordion-content p {
+    width: 90%;
+  }
 }
 /*=============================
 	14. App CSS Start
@@ -889,6 +975,9 @@ p {
     height: 100%;
     display: flex;
   }
+  .app-content .heading-two {
+    padding-right: 10px;
+  }
   .app-btn {
     flex-direction: column;
     gap: 12px;
@@ -931,6 +1020,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
+  padding-bottom: 42px;
 }
 .footer-main .footer-widget {
   width: 176px;
@@ -952,8 +1042,57 @@ p {
   letter-spacing: -0.112px;
 }
 
+.footer-bottom {
+  padding-top: 32px;
+  padding-bottom: 96px;
+  border-top: 1px solid #cbd5e1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: flex;
+}
+.footer-logo {
+  order: 1;
+}
+.scroll-to-top {
+  order: 2;
+}
+.footer-copyright {
+  order: 3;
+}
+.scroll-to-top span {
+  width: 48px;
+  cursor: pointer;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 123px;
+  border: 1px solid #cbd5e1;
+}
+.footer-copyright p {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.084px;
+}
+
 @media (max-width: 576px) {
   .footer-area {
     padding: 64px 0;
+  }
+  .footer-bottom {
+    padding-bottom: 64px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .scroll-to-top {
+    order: 3;
+  }
+  .footer-copyright {
+    order: 2;
+    margin-top: 16px;
+    margin-bottom: 32px;
   }
 }
