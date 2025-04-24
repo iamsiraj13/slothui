@@ -371,7 +371,7 @@ p {
     row-gap: 32px;
   }
   .brand-item {
-    width: 96px;
+    width: 93px;
     height: 64px;
   }
 }
@@ -507,7 +507,7 @@ p {
   line-height: 24px;
   letter-spacing: -0.144px;
 }
-@media (max-width: 420.98px) {
+@media (max-width: 420px) {
   .counter-area {
     padding: 64px 0;
   }
@@ -520,7 +520,7 @@ p {
   .counter-area .section-title .heading-two {
     padding-right: 40px;
   }
-  . .counter-item {
+  .counter-item {
     text-align: center;
     border-right: 0;
     padding-left: 0;
